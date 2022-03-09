@@ -1,0 +1,17 @@
+# Lore for the heads that are crafter/obtained from killing
+skull-lore:
+  - "&fThe skull of a slain &4enemy"
+  - "&fCan be used to respawn a &4foe&f or &efriend"
+  - "&fBe wary as it can only be used once"
+
+# Head recipe for the revive skull
+recipe:
+  '1': diamond_block
+  '2': netherite_ingot
+  '3': diamond_block
+  '4': netherite_ingot
+  '5': totem_of_undying
+  '6': netherite_ingot
+  '7': diamond_block
+  '8': netherite_ingot
+  '9': diamond_block

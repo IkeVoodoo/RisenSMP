@@ -1,0 +1,16 @@
+name: AwakenSMP
+version: '${project.version}'
+main: me.ikevoodoo.awakensmp.AwakenSMP
+api-version: 1.16
+authors: [ IkeVoodoo ]
+description: AwakenSMP Plugin
+
+commands:
+  arevive:
+    permission: awakensmp.revive
+    description: Revive a player or all players
+    permission-message: You do not have permission to revive players
+  areload:
+    permission: awakensmp.reload
+    description: Reload the plugin
+    permission-message: You do not have permission to reload the plugin
