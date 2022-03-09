@@ -11,7 +11,7 @@ This is not official and is purely fan made!
   - You are not allowed to take code from this plugin if you use it in a commercial product
   - You are allowed to use this plugin on your server, regardless if it has monetization or not and the server follows the mojang [EULA](https://account.mojang.com/documents/minecraft_eula)
 
-Download on [SpigotMC](https://www.spigotmc.org/resources/lifesteal-smp-plugin.94387/)
+Download on [SpigotMC](https://www.spigotmc.org/resources/awakensmp-plugin.100577/)
 
 Join the [Discord](https://refinedtech.dev/discord)
 
