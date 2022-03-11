@@ -44,6 +44,8 @@ public final class AwakenSMP extends JavaPlugin {
 
         getCommand("areload").setExecutor(new ReloadCommand());
 
+        new Metrics(this, 14577);
+
         fileManager = new FileManager();
 
         EliminationUtils.load();
