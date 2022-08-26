@@ -27,6 +27,7 @@ public class InventoryUtils {
     giveHeadItem(Player player, Player victim) {
         ItemStack stack = getHeadItem();
         SkullMeta meta = (SkullMeta) stack.getItemMeta();
+        if (meta == null) return;
         meta.setDisplayName(victim.getName());
         meta.setOwningPlayer(victim);
         stack.setItemMeta(meta);
@@ -38,6 +39,8 @@ public class InventoryUtils {
     getHeadItem() {
         ItemStack stack = new ItemStack(Material.PLAYER_HEAD);
         ItemMeta meta = stack.getItemMeta();
+        if (meta == null)
+            throw new IllegalStateException("The meta is null however it is required.");
         List<String> lore = AwakenSMP.getInstance()
                 .getConfig().getStringList("skull-lore")
                 .stream().map(s -> ChatColor.translateAlternateColorCodes('&', s))
@@ -55,7 +58,12 @@ public class InventoryUtils {
         if(Boolean.TRUE.equals(player.getWorld().getGameRuleValue(GameRule.KEEP_INVENTORY))) return;
         for (ItemStack item : player.getInventory().getStorageContents()) {
             if (item != null) {
-                player.getWorld().dropItem(player.getLocation(), item);
+                player.getWorld().dropItemNaturally(player.getLocation(), item);
+            }
+        }
+        for (ItemStack item : player.getInventory().getArmorContents()) {
+            if (item != null) {
+                player.getWorld().dropItemNaturally(player.getLocation(), item);
             }
         }
         player.getInventory().clear();
