@@ -24,7 +24,7 @@ public class PlayerPlaceListener implements Listener {
 
         ItemStack stack = event.getItemInHand();
 
-        event.setCancelled(run(player, stack, event.getHand(), event.getBlockPlaced().getLocation()));
+        event.setCancelled(run(player, stack, event.getHand(), event.getBlockPlaced().getLocation().clone().add(0.5, 0, 0.5)));
     }
 
     private boolean
@@ -41,9 +41,11 @@ public class PlayerPlaceListener implements Listener {
             return true;
         }
 
-        if(!offlinePlayer.hasPlayedBefore()) {
-            reviver.sendMessage(ChatColor.RED + offlinePlayer.getName() + " not found!");
-            return true;
+        if (!offlinePlayer.isOnline()) {
+            if (!offlinePlayer.hasPlayedBefore()) {
+                reviver.sendMessage(ChatColor.RED + offlinePlayer.getName() + " not found!");
+                return true;
+            }
         }
 
         if(!EliminationUtils.isEliminated(offlinePlayer.getUniqueId())) {

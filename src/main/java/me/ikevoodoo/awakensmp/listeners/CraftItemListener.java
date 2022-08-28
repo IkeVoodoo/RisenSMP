@@ -11,12 +11,14 @@ public class CraftItemListener implements Listener {
 
     @EventHandler
     public void on(CraftItemEvent event) {
-        if(event.getRecipe() instanceof ShapedRecipe) {
-            ShapedRecipe recipe = (ShapedRecipe) event.getRecipe();
-            if(!recipe.getKey().equals(AwakenSMP.getInstance().getRecipeKey())) {
-                return;
-            }
+        if (!(event.getRecipe() instanceof ShapedRecipe)) {
+            return;
         }
+
+        ShapedRecipe recipe = (ShapedRecipe) event.getRecipe();
+
+        if(!recipe.getKey().equals(AwakenSMP.getInstance().getRecipeKey()))
+            return;
 
         event.setCurrentItem(InventoryUtils.getHeadItem());
     }

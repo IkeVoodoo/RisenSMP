@@ -1,9 +1,9 @@
-name: AwakenSMP
+name: '${project.name}'
 version: '${project.version}'
 main: me.ikevoodoo.awakensmp.AwakenSMP
 api-version: 1.16
 authors: [ IkeVoodoo ]
-description: AwakenSMP Plugin
+description: RisenSMP Plugin
 
 commands:
   arevive:
